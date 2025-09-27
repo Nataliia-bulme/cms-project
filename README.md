@@ -11,7 +11,8 @@
 
 Ghost ist ein modernes, minimalistisches Content-Management-System (CMS), das speziell für Publisher, Startups und Entwickler:innen entwickelt wurde.  
 Der Gründer **John O'Nolan** war früher Mitwirkender bei WordPress – bis er sich fragte:  
-> „Was wäre, wenn es ein CMS gäbe, das sich auf Schreiben und Performance konzentriert – ohne Ballast?“  
+> „Was wäre, wenn es ein CMS gäbe, das sich auf Schreiben und Performance konzentriert – ohne Ballast?“
+
 So entstand Ghost: schnell, offen, elegant.
 
 ---
@@ -109,6 +110,17 @@ docker compose up -d
 ```
 - Webseite: [http://localhost:2368](http://localhost:2368)  
 - Admin: [http://localhost:2368/ghost](http://localhost:2368/ghost)
+
+
+## 🌐 Zugriff im Netzwerk 
+
+Falls du Ghost von einem anderen Gerät im WLAN öffnen willst:
+
+```bash
+ip addr show | grep inet
+```
+- Beispiel: http://192.168.254.142:2368
+- Admin: http://192.168.254.142:2368/ghost
 
 ---
 
@@ -280,7 +292,8 @@ Dank dieser Dokumentation war die Arbeit mit Ghost wesentlich einfacher und übe
 
 ---
 ---
----
+<br/><br/><br/>
+
 
 
 # 👻 Our First Ghost CMS Project
@@ -295,6 +308,7 @@ Dank dieser Dokumentation war die Arbeit mit Ghost wesentlich einfacher und übe
 Ghost is a modern, minimalist content management system (CMS) designed specifically for publishers, startups, and developers.  
 Its founder **John O'Nolan** was previously a contributor to WordPress — until he asked:  
 > “What if there were a CMS focused purely on writing and performance — without the bloat?”  
+
 Thus, Ghost was born: fast, open, and elegant.
 
 ---
@@ -385,6 +399,17 @@ docker compose up -d
 ```
 - Website: http://localhost:2368
 - Admin: http://localhost:2368/ghost
+
+## 🌐 Access via Local Network
+
+If you want to access Ghost from another device on the same Wi-Fi:
+
+```bash
+ip addr show | grep inet
+```
+- Example: http://192.168.254.142:2368 
+- Admin: http://192.168.254.142:2368/ghost
+
 
 ## 3️⃣ Hosting on Render (Docker + PostgreSQL)
 ### Recommended for:
