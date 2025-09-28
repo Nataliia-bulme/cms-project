@@ -3,6 +3,9 @@ FROM ghost:6-alpine
 # Рабочая директория Ghost
 WORKDIR /var/lib/ghost
 
+# Установить драйвер Postgres
+RUN npm install pg --save --legacy-peer-deps
+
 # Копируем кастомный контент (темы, изображения и т. д.)
 COPY ./content ./content
 
