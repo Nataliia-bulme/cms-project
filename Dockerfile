@@ -14,7 +14,7 @@ ENV database__client=postgres
 ENV database__connection__host=dpg-d3be73nfte5s739m6os0-a
 ENV database__connection__port=5432
 ENV database__connection__user=cms_db_je2n_user
-ENV database__connection__password=6fj96nMrPePvQCnAUuZOb6vXyHjBaX0x
+ENV database__connection__password=xTlpdLoMMDVL8BqaIsyoUbP2IUrcwWIi
 ENV database__connection__database=cms_db_je2n
 # Set the site URL (replace with your Render domain)
 ENV url=https://cms-project-udv9.onrender.com
