@@ -9,6 +9,8 @@ RUN npm install pg --save --legacy-peer-deps
 # Копируем кастомный контент (темы, изображения и т. д.)
 COPY ./content ./content
 
+COPY config.production.json /var/lib/ghost/config.production.json
+
 # Настройки для подключения к Postgres
 ENV database__client=postgres
 ENV database__connection__host=${DB_HOST}
