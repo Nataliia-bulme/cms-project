@@ -3,10 +3,10 @@
   "database": {
     "client": "pg",
     "connection": {
-      "host": "dpg-d3cgaivdiees73fvrvm0-a",
-      "user": "cms_db_nkog_user",
-      "password": "xTlpdLoMMDVL8BqaIsyoUbP2IUrcwWIi",
-      "database": "cms_db_nkog",
+      "host": "dpg-d3cigendiees73814eqg-a",
+      "user": "cms_db_omho_user",
+      "password": "o7Oyqqjy1zcTcOtnGCXMv7YE0cibtrz3",
+      "database": "cms_db_omho",
       "port": 5432
     }
   }
