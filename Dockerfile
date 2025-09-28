@@ -1,29 +1,25 @@
-FROM ghost:latest
+FROM ghost:6-alpine
 
-# Set the working directory
+# Рабочая директория Ghost
 WORKDIR /var/lib/ghost
 
-# Install Postgres client for Ghost
-RUN cd current && npm install pg --save --legacy-peer-deps
-
-# Copy custom content (themes or config, if any)
+# Копируем кастомный контент (темы, изображения и т. д.)
 COPY ./content ./content
 
-# Tell Ghost to use Postgres
+# Настройки для подключения к Postgres
 ENV database__client=postgres
-ENV database__connection__host=dpg-d3cgaivdiees73fvrvm0-a
+ENV database__connection__host=${DB_HOST}
 ENV database__connection__port=5432
-ENV database__connection__user=cms_db_nkog_user
-ENV database__connection__password=xTlpdLoMMDVL8BqaIsyoUbP2IUrcwWIi
-ENV database__connection__database=cms_db_nkog
+ENV database__connection__user=${DB_USER}
+ENV database__connection__password=${DB_PASSWORD}
+ENV database__connection__database=${DB_NAME}
 
-# Set the site URL (must match your Render domain)
+# URL сайта (обязательно совпадает с Render-доменом)
 ENV url=https://cms-project-udv9.onrender.com
 
-# Expose the Ghost port
+# Ghost работает на порту 2368
 EXPOSE 2368
 
-# Start Ghost
+# Запуск Ghost
 CMD ["node", "current/index.js"]
-
 
