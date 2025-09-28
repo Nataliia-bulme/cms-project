@@ -1,16 +1,42 @@
 version: '3.1'
 
 services:
+  db:
+    image: postgres:15
+    container_name: ghost_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: cms_user
+      POSTGRES_PASSWORD: cms_password
+      POSTGRES_DB: cms_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
   ghost:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: ghost_app
+    restart: unless-stopped
     ports:
       - "2368:2368"
+    depends_on:
+      - db
     environment:
-      url: http://192.168.254.142:2368
-      database__client: sqlite3
-      database__connection__filename: /var/lib/ghost/content/data/ghost-local.db
+      # URL локального сайта
+      url: http://localhost:2368
+      
+      # Подключение к Postgres
+      database__client: postgres
+      database__connection__host: db
+      database__connection__user: cms_user
+      database__connection__password: cms_password
+      database__connection__database: cms_db
+      database__connection__port: 5432
     volumes:
       - ./content:/var/lib/ghost/content
-    restart: unless-stopped
+
+volumes:
+  db_data:
