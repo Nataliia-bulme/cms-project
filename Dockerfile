@@ -4,7 +4,7 @@ FROM ghost:latest
 WORKDIR /var/lib/ghost
 
 # Install Postgres client for Ghost
-RUN cd current && npm install pg --save
+RUN cd current && npm install pg --save --legacy-peer-deps
 
 # Copy custom content (themes or config, if any)
 COPY ./content ./content
