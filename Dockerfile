@@ -2,7 +2,7 @@ FROM ghost:6-alpine
 
 WORKDIR /var/lib/ghost
 
-RUN npm install pg
+# RUN npm install pg
 
 COPY ./content ./content
 COPY config.production.json /var/lib/ghost/config.production.json
