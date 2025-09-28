@@ -11,6 +11,6 @@ ENV url=https://cms-project-udv9.onrender.com
 
 EXPOSE 2368
 
-CMD ["node", "current/index.js"]
+CMD ["node", "current/ghost.js"]
 
 
