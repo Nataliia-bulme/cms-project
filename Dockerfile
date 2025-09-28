@@ -5,7 +5,7 @@ WORKDIR /var/lib/ghost
 RUN npm install pg --save --legacy-peer-deps
 
 COPY ./content ./content
-COPY config.production.json ./config.production.json
+COPY config.production.json /var/lib/ghost/config.production.json
 
 ENV url=https://cms-project-udv9.onrender.com
 
