@@ -2,7 +2,7 @@ FROM ghost:6-alpine
 
 WORKDIR /var/lib/ghost
 
-RUN npm install pg --save --legacy-peer-deps
+RUN npm install pg
 
 COPY ./content ./content
 COPY config.production.json /var/lib/ghost/config.production.json
